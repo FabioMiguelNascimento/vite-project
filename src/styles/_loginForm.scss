@@ -1,0 +1,199 @@
+@use 'main' as *;
+
+.modalContainer {
+  background: radial-gradient(hsl(0, 0, 0, 0.4), hsl(0, 0, 0, 0.7), hsl(0, 0, 0));
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  transition: opacity 300ms;
+
+  &.open {
+    opacity: 1;
+  }
+
+  &.close {
+    opacity: 0;
+  }
+
+  .formContainer {
+    padding: 40px 20px;
+    background: white;
+    border-radius: 5px;
+    position: relative;
+    transition: transform 300ms, opacity 300ms;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    transform: scale(0.8);
+    opacity: 0;
+
+    &.open {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    &.close {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+
+    .closeIcon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      transition: 200ms;
+
+      &:hover {
+        color: $clr-danger;
+      }
+    }
+
+    .header{
+      .title {
+        h1 {
+          margin: 0;
+        }
+      }
+  
+      .description {
+        p {
+          margin: 0;
+        }
+      }
+    }
+
+    .footer{
+      p {
+        a {
+          color: $clr-blue;
+          text-decoration: none;
+          cursor: pointer;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .loginOpts {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+
+        svg {
+          cursor: pointer;
+          transition: 200ms;
+          font-size: 22px;
+
+          &:hover {
+            color: $clr-blue;
+          }
+        } 
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      // Inputs menos o de data de nascimento
+      div[class$="InpCtn"]:not([class*="birthDate"]) {
+        position: relative;
+
+        input {
+          padding: 8px 16px;
+          border: 2px solid rgb(180, 180, 180);
+          border-radius: 3px;
+          width: calc(100% - 32px - 4px);
+          background: white;
+
+          &:focus {
+            outline: none;
+            border-color:$clr-blue;
+          }
+        }
+
+        input:focus+label,
+        input:not(:placeholder-shown)+label {
+          top: -5px;
+          left: 8px;
+        }
+
+        label {
+          position: absolute;
+          left: 16px;
+          top: 10px;
+          padding: 0 4px;
+          background-color: #fff;
+          font-size: 14px;
+          line-height: 1;
+          transition: all .15s ease-out;
+        }
+      }
+
+      // Input de data de nascimento
+      div[class$="InpCtn"][class*="birthDate"] {
+        display: flex;
+        gap: 10px;
+
+        input {
+          padding: 8px 16px;
+          border: 2px solid rgb(180, 180, 180);
+          border-radius: 3px;
+          width: calc(100% - 32px - 4px);
+          background: white;
+
+          &:focus {
+            outline: none;
+            border-color:$clr-blue;
+          }
+        }
+
+        input:focus+label,
+        input:not(:placeholder-shown)+label {
+          top: -5px;
+          left: 8px;
+        }
+
+        label {
+          position: absolute;
+          left: 16px;
+          top: 10px;
+          padding: 0 4px;
+          background-color: #fff;
+          font-size: 14px;
+          line-height: 1;
+          transition: all .15s ease-out;
+        }
+      }
+
+      // Botão de submit
+      button {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 3px;
+        background: $clr-blue;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover {
+          background: $clr-blue;
+        }
+      }
+    }
+  }
+}

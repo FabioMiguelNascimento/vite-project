@@ -1,0 +1,253 @@
+$txt-clr: #2d2d2d;
+$clr-blue: #1981ff;
+$clr-danger: #ff3737;
+$clr-success: #31ff38;
+$clr-warning: #ff9710;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  background: #ccc;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  a {
+    color: $txt-clr;
+    text-decoration: none; 
+
+    &:hover {
+      box-shadow: inset 0 -2px 0 white;
+      border-radius: 3px;
+  }
+
+  *, label, input, ::before, ::after, ::placeholder, *>* {
+    color: $txt-clr;
+  }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+section[id] {
+  scroll-margin-top: 100px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: calc(70px + 2rem) 1rem 1rem 1rem;
+
+  h2 {
+    padding: 0 1rem;
+  }
+
+  .benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    margin: 2rem 0;
+
+    .benefit-item {
+      text-align: center;
+      
+      svg {
+        color: $clr-blue;
+        margin-bottom: 1rem;
+      }
+
+      h3 {
+        margin: 0.5rem 0;
+        font-size: 1.1rem;
+      }
+
+      p {
+        color: #666;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .promo-banner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+
+    > div {
+      background: $clr-blue;
+      color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        margin: 0;
+      }
+
+      p {
+        font-size: 1.2rem;
+        margin: 0.5rem 0 0;
+      }
+    }
+  }
+
+  .why-choose-us {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    text-align: center;
+
+    h2 {
+      margin-bottom: 2rem;
+      color: $txt-clr;
+    }
+
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+
+      .stat-item {
+        padding: 1.5rem;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-10px);
+        }
+
+        .stat-number {
+          font-size: 2.5rem;
+          font-weight: bold;
+          color: $clr-blue;
+          display: block;
+          margin-bottom: 0.5rem;
+        }
+
+        p {
+          color: $txt-clr;
+          font-size: 1.1rem;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .newsletter {
+    background: white;
+    padding: 3rem;
+    text-align: center;
+    border-radius: 8px;
+    margin: 2rem 0;
+
+    h3 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    p {
+      color: #666;
+      margin: 1rem 0;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 1rem;
+      max-width: 500px;
+      margin: 1.5rem auto 0;
+
+      .emailInpCtn {
+        position: relative;
+        width: 100%;
+        
+        input {
+          padding: 8px 16px;
+          border: 2px solid rgb(180, 180, 180);
+          border-radius: 3px;
+          width: calc(100% - 32px - 4px);
+          background: white;
+
+          &:focus {
+            outline: none;
+            border-color: $clr-blue;
+          }
+
+          &:focus + label,
+          &:not(:placeholder-shown) + label {
+            top: -5px;
+            left: 8px;
+          }
+        }
+
+        label {
+          position: absolute;
+          left: 16px;
+          top: 10px;
+          padding: 0 4px;
+          background-color: #fff;
+          font-size: 14px;
+          line-height: 1;
+          transition: all .15s ease-out;
+        }
+      }
+
+      button {
+        align-self: center;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 3px;
+        background: $clr-blue;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        min-width: 120px;
+
+        &:hover {
+          background: darken($clr-blue, 10%);
+        }
+      }
+    }
+  }
+}

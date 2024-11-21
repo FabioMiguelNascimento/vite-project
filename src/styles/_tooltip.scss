@@ -1,0 +1,101 @@
+@use 'main' as *;
+
+.hovered .tooltipContainer {
+  opacity: 1;
+  scale: 1;
+}
+
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+
+  .tooltip {
+    position: absolute;
+    z-index: 1000;
+    background:white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;visibility: inherit;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+  
+    .tooltip-text {
+      display: block;
+      text-align: center;
+      white-space: nowrap;
+      color: $txt-clr;
+    }
+  
+    &::after {
+      content: '';
+      position: absolute;
+      background:white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      height: 2px;
+      width: 20px;
+    }
+  
+    &.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    &.top {
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-10px);
+  
+      &::after {
+        bottom: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  
+    &.bottom {
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+  
+      &::after {
+        top: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  
+    &.left {
+      right: 100%;
+      top: 50%;
+      transform: translateY(-50%) translateX(-10px);
+  
+      &::after {
+        right: -6px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 2px;
+        height: 20px;
+      }
+    }
+  
+    &.right {
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%) translateX(10px);
+  
+      &::after {
+        left: -6px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 2px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+
+

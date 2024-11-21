@@ -1,0 +1,88 @@
+@use "main" as *;
+
+.navbar {
+  position: fixed;
+  display: flex;
+  width: calc(100svw - 2rem);
+  height: 70px;
+  padding: 1rem;
+  background-color: white;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 999;
+  * > * {
+    color: $txt-clr;
+  }
+
+  .logo {
+    font-size: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    p {
+      font-size: 30px;
+    }
+  }
+
+  nav {
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 10px;
+
+      li {
+        transition: 200ms;
+        position: relative;
+        cursor: pointer;
+        
+        a {
+          text-decoration: none;
+          padding: 5px;
+          transition: 200ms;
+
+          &.active {
+            background: $clr-blue;
+            color: white;
+          }
+        }
+
+        svg {
+          font-size: 1.5rem;
+        }
+        
+        &:not(:has(a>svg)):hover {
+          a {
+            background: $clr-blue;
+            color: white;
+          }
+        }
+      
+      }
+    }
+
+    .cart-icon {
+      position: relative;
+      cursor: pointer;
+      font-size: 1.5rem;
+      padding: 0.5rem;
+      
+      .cart-count {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: red;
+        color: white;
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}

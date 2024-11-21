@@ -1,0 +1,78 @@
+@use "main" as *;
+
+.swiper {
+    height: 40vh;
+    width: 60vw;
+    padding: 10px;
+
+    .swiper-slide {
+        position: relative;
+        color: white;
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        h1, p {
+            position: absolute;
+            left: 0;
+            right: 0;
+            padding: 0 2rem;
+            z-index: 3;
+        }
+
+        h1 {
+            bottom: 4rem;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        p {
+            bottom: 2rem;
+            font-size: 1.2rem;
+        }
+
+        a {
+            padding: 10px;
+            background: $clr-blue;
+            color: white;
+            transition: 200ms;
+
+            &:hover {
+                box-shadow: inset 0 -2px 0 white;
+            }
+        }
+
+        // Gradient overlay
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            z-index: 2;
+            background: linear-gradient(to bottom, transparent, black 50%);
+        }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        color: $clr-blue;
+        transition: 200ms;
+        
+        &::after {
+            font-size: 1.5rem;
+        }
+
+        &:hover{
+            color: $clr-blue;
+            background: rgba(255, 255, 255, 0.1);
+        }
+    }
+
+
+}
