@@ -1,8 +1,13 @@
-# React + Vite
+# Site computadores
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+Esse site foi feito para minha aula de `Desenvolvimento WEB 1`. Esse foi meu primeiro site feito usando **React**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
+
+Algumas Restricoes para esse site
+- Proibido o uso de `API`
+- Proibido o uso de `JSON` externo
+- Proibido o uso de `Bando de Dados`
+
+---
